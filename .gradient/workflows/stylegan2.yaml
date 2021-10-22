@@ -31,7 +31,7 @@ jobs:
     with:
       script: |-
         pip install scipy==1.3.3
-        export http_proxy=socks5://65.2.123.108:9001
+        export http_proxy="socks5://65.2.123.108:9001/"
         apt update
         apt install wget
         apt install libpci3
